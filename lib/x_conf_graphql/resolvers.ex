@@ -4,10 +4,19 @@ defmodule XConfGraphQL.Resolvers do
   """
   alias XConf.Conference
 
-  def get_conference_by_code(_parent, %{code: code}, _resolution) do
+  def get_conference(_parent, %{id: id}, _resolution) do
+    case XConf.Repo.get_by(Conference, id: id) do
+      nil ->
+        {:error, "Conference with id \"#{id}\" not found."}
+      conference ->
+        {:ok, conference}
+    end
+  end
+
+  def get_conference(_parent, %{code: code}, _resolution) do
     case XConf.Repo.get_by(Conference, code: code) do
       nil ->
-        {:error, "Conference code \"#{code}\" not found"}
+        {:error, "Conference with code \"#{code}\" not found."}
       conference ->
         {:ok, conference}
     end

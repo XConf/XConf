@@ -3,9 +3,9 @@ defmodule XConfGraphQL.Types do
   The module to hold GraphQL type definitions.
   """
   use Absinthe.Schema.Notation
+  use Absinthe.Relay.Schema.Notation, :modern
 
-  object :conference do
-    field :id, non_null(:id)
+  node object :conference do
     field :code, non_null(:string)
     field :name, non_null(:string)
   end
