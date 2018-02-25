@@ -19,6 +19,12 @@ defmodule XConfWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/graphql" do
+    pipe_through :api
+
+    forward "/", Absinthe.Plug, schema: XConfGraphQL.Schema
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", XConfWeb do
   #   pipe_through :api
