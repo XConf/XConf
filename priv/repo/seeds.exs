@@ -9,3 +9,13 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias XConf.{Repo, Conference}
+
+IO.puts "== Preparing Conference Data =="
+
+Repo.get_by(Conference, code: "rubyconf-2016") || %Conference{}
+  |> Conference.changeset(%{code: "rubyconf-2016", name: "RubyConf 2016"})
+  |> Repo.insert_or_update!()
+
+IO.puts "Database Seeded!"
