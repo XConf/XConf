@@ -17,3 +17,6 @@ config :x_conf, XConf.Repo,
   database: "x_conf_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+import_config "test.secret.*"
+

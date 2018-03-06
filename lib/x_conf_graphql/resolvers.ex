@@ -2,7 +2,7 @@ defmodule XConfGraphQL.Resolvers do
   @moduledoc """
   The module to hold GraphQL field resolvers.
   """
-  alias XConf.Conference
+  alias XConf.Conf.Conference
 
   def get_conference(_parent, %{id: id}, _resolution) do
     case XConf.Repo.get_by(Conference, id: id) do

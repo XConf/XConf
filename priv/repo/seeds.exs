@@ -10,7 +10,8 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alias XConf.{Repo, Conference}
+alias XConf.Repo
+alias XConf.Conf.{Conference}
 
 IO.puts "== Preparing Conference Data =="
 

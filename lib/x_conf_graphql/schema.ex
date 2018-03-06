@@ -4,6 +4,7 @@ defmodule XConfGraphQL.Schema do
   """
   use Absinthe.Schema
   use Absinthe.Relay.Schema, :modern
+  alias XConf.Conf.Conference
 
   import_types XConfGraphQL.Types
 
@@ -11,7 +12,7 @@ defmodule XConfGraphQL.Schema do
 
   node interface do
     resolve_type fn
-      %XConf.Conference{}, _ ->
+      %Conference{}, _ ->
         :conference
       _, _ ->
         nil

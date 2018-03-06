@@ -56,3 +56,6 @@ config :x_conf, XConf.Repo,
   database: "x_conf_dev",
   hostname: "localhost",
   pool_size: 10
+
+import_config "dev.secret.*"
+
