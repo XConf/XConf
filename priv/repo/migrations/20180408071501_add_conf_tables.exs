@@ -20,7 +20,7 @@ defmodule XConf.Repo.Migrations.AddConfTables do
       add :name, :string
       add :title, :string
       add :picture_url, :string
-      add :bio, :string
+      add :bio, :text
       add :homepage_url, :string
       add :twitter_username, :string
       add :github_username, :string
