@@ -4,10 +4,10 @@ defmodule XConf.Repo.Migrations.AddConfTables do
   def change do
     create table(:sessions, primary_key: false) do
       add :id, :uuid, primary_key: true, default: fragment("uuid_generate_v4()")
-      add :type, :integer
+      add :type, :string
       add :title, :string
-      add :description, :string
-      add :language, :integer
+      add :description, :text
+      add :language, :string
       add :slide_url, :string
       add :video_url, :string
       add :time_period, :jsonb
@@ -37,9 +37,8 @@ defmodule XConf.Repo.Migrations.AddConfTables do
     end
 
     create table(:session_to_locations, primary_key: false) do
-      add :id, :uuid, primary_key: true, default: fragment("uuid_generate_v4()")
-
-      timestamps()
+      add :session_id, references(:sessions, type: :uuid)
+      add :location_id, references(:locations, type: :uuid)
     end
 
     alter table(:sessions) do
@@ -49,11 +48,6 @@ defmodule XConf.Repo.Migrations.AddConfTables do
 
     alter table(:speakers) do
       add :conference_id, references(:conferences, type: :uuid)
-    end
-
-    alter table(:session_to_locations) do
-      add :session_id, references(:sessions, type: :uuid)
-      add :location_id, references(:locations, type: :uuid)
     end
   end
 end

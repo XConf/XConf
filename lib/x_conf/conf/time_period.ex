@@ -2,7 +2,7 @@ defmodule XConf.Conf.TimePeriod do
   use Ecto.Schema
 
   embedded_schema do
-    field :start
-    field :peroid
+    field :start, :naive_datetime
+    field :peroid, :naive_datetime
   end
 end

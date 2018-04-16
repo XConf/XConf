@@ -3,8 +3,7 @@ defmodule XConf.Conf.SessionToLocation do
   import Ecto.Changeset
   alias XConf.Conf.{Location, Session}
 
-  @primary_key {:id, :binary_id, autogenerate: true}
-  @foreign_key_type :binary_id
+  @primary_key false
   schema "session_to_locations" do
     belongs_to :location, Location
     belongs_to :session, Session
