@@ -1,7 +1,7 @@
 defmodule XConf.ConferenceTest do
   use XConf.DataCase
 
-  alias XConf.Conference
+  alias XConf.Conf.Conference
 
   @sample_attrs %{code: "some-conf", name: "Some Conf"}
 

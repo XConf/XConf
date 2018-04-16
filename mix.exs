@@ -56,6 +56,9 @@ defmodule XConf.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:cowboy, "~> 1.0"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
+
+      {:ecto_enum, "~> 1.0"},
+      {:yaml_elixir, "~> 2.0.0"},
     ]
   end
 
