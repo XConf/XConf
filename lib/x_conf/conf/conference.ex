@@ -17,7 +17,6 @@ defmodule XConf.Conf.Conference do
 
   @doc false
   def changeset(%__MODULE__{} = conference, attrs) do
-    IO.inspect(attrs)
     conference
     |> cast(attrs, [:code, :name])
     |> validate_required([:code, :name])

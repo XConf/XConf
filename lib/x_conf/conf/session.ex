@@ -1,8 +1,3 @@
-
-import EctoEnum, only: [defenum: 2]
-defenum XConf.Conf.SessionType, SESSION: "session", ACTIVITY: "activity"
-defenum XConf.Conf.Language, EN: "en", CHT: "zh"
-
 defmodule XConf.Conf.Session do
   use Ecto.Schema
   import Ecto.Changeset
