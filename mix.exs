@@ -57,8 +57,12 @@ defmodule XConf.Mixfile do
       {:cowboy, "~> 1.0"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
 
+      # Utils
       {:ecto_enum, "~> 1.0"},
       {:yaml_elixir, "~> 2.0.0"},
+
+      # Testing
+      {:mix_test_watch, "~> 0.5", only: :dev, runtime: false}
     ]
   end
 
