@@ -25,6 +25,6 @@ defmodule XConf.Conf.Session do
   def changeset(%__MODULE__{} = session, attrs) do
     session
     |> cast(attrs, [:type, :title, :description, :language, :slide_url, :video_url])
-    |> validate_required([:type, :title, :description, :language])
+    |> validate_required([:type, :title, :language])
   end
 end

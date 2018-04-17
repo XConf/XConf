@@ -24,6 +24,6 @@ defmodule XConf.Conf.Speaker do
   def changeset(%__MODULE__{} = speaker, attrs) do
     speaker
     |> cast(attrs, [:name, :title, :picture_url, :bio, :homepage_url, :twitter_username, :github_username])
-    |> validate_required([:name, :title])
+    |> validate_required([:name])
   end
 end
