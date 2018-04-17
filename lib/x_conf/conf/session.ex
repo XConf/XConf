@@ -1,7 +1,10 @@
 defmodule XConf.Conf.Session do
   use Ecto.Schema
   import Ecto.Changeset
-  alias XConf.Conf.{SessionType, Language, TimePeriod, Speaker, Conference, Location}
+
+  alias XConf.Conf
+  alias Conf.{TimePeriod, Speaker, Conference, Location}
+  alias Conf.Enums.{SessionType, Language}
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id

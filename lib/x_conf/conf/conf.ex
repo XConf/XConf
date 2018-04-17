@@ -1,5 +1,11 @@
 defmodule XConf.Conf do
-  import EctoEnum, only: [defenum: 2]
-  defenum SessionType, session: "session", activity: "activity"
-  defenum Language, en: "en", zh_tw: "zh-tw"
+
+  alias XConf.Repo
+
+  alias XConf.Conf
+  alias Conf.Conference
+
+  def get_conference(id, opts \\ []) do
+    Repo.get(Conference, id, opts)
+  end
 end
