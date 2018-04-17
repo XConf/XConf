@@ -2,10 +2,10 @@ defmodule XConfGraphQL.Resolvers do
   @moduledoc """
   The module to hold GraphQL field resolvers.
   """
-  alias XConf.Conf.Conference
+  alias XConf.Conf
 
   def get_conference(_parent, %{id: id}, _resolution) do
-    case XConf.Repo.get_by(Conference, id: id) do
+    case Conf.get_conference(id) do
       nil ->
         {:error, "Conference with id \"#{id}\" not found."}
       conference ->
@@ -14,7 +14,7 @@ defmodule XConfGraphQL.Resolvers do
   end
 
   def get_conference(_parent, %{code: code}, _resolution) do
-    case XConf.Repo.get_by(Conference, code: code) do
+    case Conf.get_conference(code: code) do
       nil ->
         {:error, "Conference with code \"#{code}\" not found."}
       conference ->

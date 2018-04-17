@@ -1,4 +1,4 @@
-defmodule XConf.Conf.Enums do
+defmodule XConf.Conf.Enum do
   import EctoEnum, only: [defenum: 2]
 
   defenum SessionType, session: "session", activity: "activity"

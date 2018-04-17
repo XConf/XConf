@@ -4,7 +4,7 @@ defmodule XConf.Conf.Session do
 
   alias XConf.Conf
   alias Conf.{TimePeriod, Speaker, Conference, Location}
-  alias Conf.Enums.{SessionType, Language}
+  alias Conf.Enum.{SessionType, Language}
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
