@@ -47,6 +47,7 @@ defmodule XConf.Mixfile do
       # GraphQL
       {:absinthe, "~> 1.4.0"},
       {:absinthe_relay, "~> 1.4"},
+      {:absinthe_ecto, "~> 0.1.3"},
       {:absinthe_plug, "~> 1.4.0"},
 
       # Presentation Layer
