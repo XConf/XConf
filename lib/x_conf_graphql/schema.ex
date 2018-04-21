@@ -6,9 +6,9 @@ defmodule XConfGraphQL.Schema do
   use Absinthe.Relay.Schema, :modern
   alias XConf.Conf.Conference
 
-  import_types XConfGraphQL.Types
+  import_types XConfGraphQL.ConferenceSchema
 
-  alias XConfGraphQL.Resolvers
+  alias XConfGraphQL.ConfResolver
 
   node interface do
     resolve_type fn
@@ -23,7 +23,7 @@ defmodule XConfGraphQL.Schema do
     node field do
       resolve fn
         %{type: :conference, id: id}, _ ->
-          Resolvers.get_conference(nil, %{id: id}, nil)
+          ConfResolver.get_conference(nil, %{id: id}, nil)
         _, _ ->
           {:error, "Malformed global ID."}
       end
@@ -32,7 +32,7 @@ defmodule XConfGraphQL.Schema do
     @desc "Get a conference"
     field :conference, :conference do
       arg :code, non_null(:string)
-      resolve &Resolvers.get_conference/3
+      resolve &ConfResolver.get_conference/3
     end
   end
 end

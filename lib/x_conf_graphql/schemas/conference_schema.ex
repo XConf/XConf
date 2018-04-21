@@ -1,4 +1,4 @@
-defmodule XConfGraphQL.Types do
+defmodule XConfGraphQL.ConferenceSchema do
   @moduledoc """
   The module to hold GraphQL type definitions.
   """
@@ -6,7 +6,7 @@ defmodule XConfGraphQL.Types do
   use Absinthe.Schema.Notation
   use Absinthe.Relay.Schema.Notation, :modern
 
-  import_types XConfGraphQL.Type.ConferenceSchema
+  import_types XConfGraphQL.SpeakerSchema
 
   node object :conference do
     field :code, non_null(:string)
