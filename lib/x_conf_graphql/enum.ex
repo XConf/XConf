@@ -3,6 +3,6 @@ defmodule XConfGraphQL.Enum do
 
   enum :language do
     value :en
-    value :"zh-TW", as: :zh_tw
+    value :zhtw, as: :"zh-TW"
   end
 end

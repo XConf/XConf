@@ -1,6 +1,6 @@
 defmodule XConf.Conf.Enum do
-  import EctoEnum, only: [defenum: 2]
+  import EctoEnum, only: [defenum: 3]
 
-  defenum SessionType, session: "session", activity: "activity"
-  defenum Language, en: "en", zh_tw: "zh-TW"
+  defenum SessionType, :session_type, [:session, :activity]
+  defenum Language, :language, [:en, :"zh-TW"]
 end
