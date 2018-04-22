@@ -6,10 +6,10 @@ defmodule XConfGraphQL.SpeakerSchema do
     field :id, non_null(:string)
     field :name, non_null(:string)
     field :title, :string
-    field :pictureUrl, non_null(:string), resolve: &(&1.picture_url)
+    field :picture_url, non_null(:string)
     field :bio, :string
-    field :homepageUrl, :string, resolve: &(&1.homepage_url)
-    field :twitterUsername, :string, resolve: &(&1.twitter_username)
-    field :githubUsername, :string, resolve: &(&1.github_username)
+    field :homepage_url, :string
+    field :twitter_username, :string
+    field :github_username, :string
   end
 end
