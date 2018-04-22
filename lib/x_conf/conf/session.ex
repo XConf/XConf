@@ -16,7 +16,7 @@ defmodule XConf.Conf.Session do
     field :slide_url, :string
     field :video_url, :string
 
-    embeds_one :time_period, TimePeriod
+    embeds_one :time_period, TimePeriod, on_replace: :delete
     belongs_to :speaker, Speaker
     belongs_to :conference, Conference
     many_to_many :locations, Location, join_through: "session_to_locations"
@@ -28,6 +28,6 @@ defmodule XConf.Conf.Session do
   def changeset(%__MODULE__{} = session, attrs) do
     session
     |> cast(attrs, [:type, :title, :description, :language, :slide_url, :video_url])
-    |> validate_required([:type, :title, :language])
+    |> validate_required([:type, :title])
   end
 end

@@ -3,6 +3,6 @@ defmodule XConf.Conf.TimePeriod do
 
   embedded_schema do
     field :start, :naive_datetime
-    field :peroid, :naive_datetime
+    field :peroid, :integer # in seconds
   end
 end

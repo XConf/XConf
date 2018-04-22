@@ -12,6 +12,24 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
+## Db setup
+
+```bash
+# configure db params if needed, refer to config/dev.exs, create config/dev.secret.db.exs
+mix ecto.setup
+```
+
+### Seed conf data
+
+download
+
+* `speaker.yml` from https://github.com/rubytaiwan/rubyelixirconftw2018.github.io/blob/develop/data/speaker.yml
+* `program.yml` from https://github.com/rubytaiwan/rubyelixirconftw2018.github.io/blob/develop/data/program.yml
+
+```
+mix run priv/repo/seeds.exs path/to/speaker.yml path/to/program.yml
+```
+
 ## Learn more
 
   * Official website: http://www.phoenixframework.org/
