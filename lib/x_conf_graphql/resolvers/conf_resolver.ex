@@ -1,4 +1,4 @@
-defmodule XConfGraphQL.ConfResolvers do
+defmodule XConfGraphQL.ConfResolver do
   @moduledoc """
   The module to hold GraphQL field resolvers.
   """

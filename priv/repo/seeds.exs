@@ -24,7 +24,7 @@ conference =
   |> Conference.changeset(%{code: conf_code, name: conf_name})
   |> Repo.insert_or_update!()
 
-language_mapping = %{"EN" => :en, "CHT" => :zh_tw}
+language_mapping = %{"EN" => :en, "CHT" => :"zh-TW"}
 
 session_speakers =
   System.argv()
